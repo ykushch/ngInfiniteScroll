@@ -1,4 +1,4 @@
-/* ng-infinite-scroll - v1.2.0 - 2015-12-02 */
+/* ng-infinite-scroll - v1.2.1 - 2016-02-01 */
 var mod;
 
 mod = angular.module('infinite-scroll', []);
@@ -158,7 +158,7 @@ mod.directive('infiniteScroll', [
           if ((newContainer == null) || newContainer.length === 0) {
             return;
           }
-          if (newContainer instanceof HTMLElement) {
+          if (typeof HTMLElement !== 'undefined' && newContainer instanceof HTMLElement) {
             newContainer = angular.element(newContainer);
           } else if (typeof newContainer.append === 'function') {
             newContainer = angular.element(newContainer[newContainer.length - 1]);

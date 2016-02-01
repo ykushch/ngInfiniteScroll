@@ -174,7 +174,8 @@ mod.directive 'infiniteScroll', ['$rootScope', '$window', '$interval', 'THROTTLE
       if (not newContainer?) or newContainer.length == 0
         return
 
-      if newContainer instanceof HTMLElement
+      if typeof HTMLElement != 'undefined' and
+      newContainer instanceof HTMLElement
         newContainer = angular.element newContainer
       else if typeof newContainer.append == 'function'
         newContainer = angular.element newContainer[newContainer.length - 1]
